@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" >
+    <title>Happy Birthday Party</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;      
+      background: url('br.jpg') no-repeat center center fixed;
+          
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            font-size: 1.5em;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+        p{
+           font-size: 1.5em;
+           font-style: italic;
+        }
+
+        h1 {
+            font-size: 1.7em;
+            margin: 0;
+            text-shadow: 2px 2px 4px black;
+            animation: glow 1.5s infinite alternate;
+            font-family: "Dancing Script", cursive;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #ff0000; }
+            to { text-shadow: 0 0 20px #ffff00; }
+        }
+
+        /* Main Content */
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 120px 20px 20px;
+            margin-bottom:70px;
+            justify-content: center;
+        }
+
+        /* Cards Section */
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+            width: 80%;
+            max-width: 900px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            color: black;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            width: 280px;
+            text-align: center;
+        
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Wish Form */
+        .wish-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .wish-form {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .wish-form input, .wish-form textarea {
+            width: 100%;
+
+            padding: 12px 0 12px 0;
+            margin: 5px 0 5px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+            text-align: center;
+            justify-content: center;
+        }
+        
+
+        .wish-form button {
+            width: 100%;
+            padding: 12px;
+            background: #ff4500;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .wish-form button:hover {
+            background: #e63900;
+        }
+
+        /* Games Section */
+        .game-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .game-box {
+            background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+            padding: 25px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+            text-align: center;
+        }
+
+        .game-box:hover {
+            transform: scale(1.05);
+        }
+
+        .game-box input, .game-box button {
+            width: 100%;
+            padding: 12px 0 12px 0;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .game-box button {
+            background: crimson;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .game-box button:hover {
+            background: darkred;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: rgba(0, 0, 0, 0.7);
+        font: normal;    
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            color: white;
+            font-size: 0.7em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cards-container, .game-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+.falling {
+    position: fixed;
+    top: -10px;
+    font-size: 24px;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+#birthdayCake {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+   justify-content: center;
+    text-align: center;
+    z-index: 100;
+   
+}
+
+.candles {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.flame {
+    width: 8px;
+    height: 15px;
+    background: orange;
+    border-radius: 50%;
+ 
+
+}
+
+.cake-layer {
+    width: 120px;
+    height: 30px;
+    background: linear-gradient(135deg, #ff66b2, #ffcc66);
+    border-radius: 10px;
+    margin: 2px auto;
+    justify-content: center;
+    text-align: center;
+}
+
+.cake-message {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    margin-top: 5px;
+}
+
+        .photo{
+            width:95%;
+            background: cover;
+            margin: 35px;
+            border: 5px solid white;
+            box-shadow:5px 6px 5px 8px pink;
+            animation: slide 5s ease-in 2s;
+        }
+        @keyframes slide {
+        from{
+            width: 0%;
+            border:2px solid black
+        }
+            To{
+                width: 100%;
+            }
+        }
+         h2, h3, p {
+
+            margin: 10px 0;
+
+        }
+
+        /* Input Styles */
+
+        .input1 {
+
+            font-size: 1em;
+
+            color: black;
+
+            padding: 5px;
+
+            text-align: center;
+
+            font-weight: bold;
+
+            border: 2px solid hotpink;
+
+            border-radius: 10px;
+
+            width: 70%;
+
+            margin: 10px auto;
+
+            display: block;
+
+        }
+      
+    
+/* Button Styles */
+
+        .gbtn {
+
+            background-color: #ff6915;
+
+            color: black;
+
+            width: 90%;
+
+            padding: 10px;
+
+            font-size: 1em;
+
+            margin: 10px auto;
+
+            border: 2px solid black;
+
+            box-shadow: 2px 3px 2px grey;
+
+            cursor: pointer;
+
+        }
+
+        .gbtn:hover {
+
+            background-color: #f06d1a;
+
+            color: white;
+
+        }
+
+        /* Surprise Button */
+
+        .a {
+
+            border: 2px solid white;
+
+            background-color: lightblue;
+
+            padding: 10px 20px;
+
+            margin: 20px auto;
+
+            border-radius: 8px;
+
+            display: inline-block;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            color: black;
+
+        }
+
+        .a:hover {
+
+            background-color: deepskyblue;
+
+        }
+     
+   
+
+.a{
+
+  border:2px solid white;
+
+  background-color:lightblue;
+
+  padding:10px;
+
+  margin-left:8px;
+
+  border-radius:8px;
+
+  margin-bottom:20px;
+
+  padding-left:35%;
+
+  padding-right:35%;
+}  
+
+  
+
+      }
+
+      
+
+      #n1{
+
+        font:robot;
+
+        font-width:bolder ;
+
+        color:gold;
+
+        font-shadow:1px;
+
+        background-color:wb('1,1');
+
+        
+
+    .happy{
+
+      color:pink;        margin-top:15px;al;    
+
+
+}  
+
+
+      }
+
+      .bday{
+
+        color:blue;
+rmal;
+}  
+
+        }
+
+      .toyou{
+
+        color: v rmal;
+
+      margin:10px;
+
+      position: absolute;}
+
+      
+
+      
+
+  cardInside {
+
+  position: absolute;
+
+  background-color: #fff;
+
+  width: 250px;
+
+  height:350px;
+
+  z-index:-1;
+
+  left:0;
+
+  top:0;
+
+  box-shadow: inset 100px 20px 100px rgba(0,0,0,0.2);
+
+}
+
+.inside-text {
+
+  position: relative;
+
+  top:-160px;
+
+  transform: scale(0.7);
+
+  margin:10px;
+
+}
+
+.wishes {
+
+  position: relative;
+
+  top:-100px;
+
+  margin: 25 font-family: 'Brush Script MT', cursive;
+
+  color: #333;-style: normal;
+  
+
+}
+
+.name {
+
+  margin-left:150px;
+
+}
+
+birthdayCard {
+
+  position: reletive;
+
+  width: 250px;
+
+  height:350px;
+
+  cursor: pointer;
+
+
+
+  transition: 4s;
+
+  margin:10px;
+  
+
+}
+
+      
+
+.birthdayCard:hover {
+
+
+	box-shadow: inset 100px 20px 100px rgba(0,0,0,.15), 0 10px 100px rgba(0,0,0,0.3);
+
+}
+
+.birthdayCard:hover .cardFront {
+
+
+}
+
+.birthdayCard:hover .front-text {
+
+
+
+}
+
+.birthdayCard:hover .wrap-deco {
+
+  display: none;
+
+}
+
+.birthdayCard:hover .wrap-decoTwo {
+
+  display: none;
+
+}
+
+.birthdayCard:hover .plate {
+
+  display: none;
+
+}
+
+    .separator{
+
+     background: pink; 
+
+      
+
+     border: 5px solid red;
+
+     border-radius: 15px;
+
+     padding: 0;
+
+     margin: 10px;
+
+     padding-top: 5px;
+
+}
+
+
+
+
+
+
+
+
+
+
+        .input1 {
+
+            font-size: 1em;
+
+            color: black;
+
+            padding: 5px;
+
+            text-align: center;
+
+            font-weight: bold;
+
+            border: 2px solid hotpink;
+
+            border-radius: 10px;
+
+            width: 70%;
+
+            margin: 10px auto;
+
+            display: block;
+
+        }
+        
+       
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🥳Happy Birthday!🎂</h1>
+    </header>
+    <br><br><br><br><br><br>
+    
+     <div class="birthdayCard">
+
+        <div class="cardFront">
+
+            <h3 class="happy">HAPPY</h3>
+
+            <h2 class="bday">BIRTHDAY</h2>
+
+        </div>
+
+        <div class="cardInside">
+
+            <p class="para">Dear Friend,</p>
+
+            <p class="para">Happy birthday! May your wishes come true.</p>
+
+        </div>
+        
+
+    <div class="content">
+        <!-- Cards Section -->
+        <div class="cards-container">
+            <div class="card">
+                <img src="b.jpg" alt="Birthday Gifts">
+                <h3>Exciting Gifts 🎁</h3>
+            </div>
+            <div class="card">
+                <img src="bb.jpg" alt="Balloons">
+                <h3>Beautiful Decorations 🎈</h3>
+            </div>
+        </div>
+
+<marquee>  <input type "text" id="n1" value="*...* Yashika *...*" style=" padding:3%; text-align:center; border:2px solid pink; shadow-box:3px 5px 6px; border-radius:10px; font-size:1em; margin:10%;">
+
+      </marquee>
+    <p class="intro-message">Wishing you a day filled with love, happiness, and laughter!</p>
+  <p class="tagline">Celebrate your special day with joy and love!</p>
+  
+   <p style="color: red;"><br> you be happy </br>
+
+      celebrate birthday fastival
+
+      for you </p>
+    
+    </section>
+
+    <br>
+
+    <marquee>
+<b style="font:arial; color: black; margin:10px;"> Allah bless you always be happy and proud yourself 💝 </b>
+
+ 
+    </marquee>
+
+  <P style="color: blue;"> you are So cute , lovely and beautiful girl 😍 👍</p><br>
+  
+           <img src="y.jpg" class="photo"></img>
+           <form action="https://formspree.io/f/mvojnznw" method="post">
+        <!-- Wish Form -->
+        <div class="wish-container">
+            <div class="wish-form">
+                <h3>Send Your Wishes 💌</h3>
+                <input type="text" id="name" placeholder="Your Name">
+                <textarea id="customMessage" placeholder="Your Birthday Wish"></textarea>
+                <button type="submit" onclick="storeWish()">Gets Wish</button>
+                <p id="wishMessage"></p>
+            </div>
+        </div>
+
+        <!-- Games -->
+        <div class="game-container">
+            <div class="game-box">
+                <h3>🎮 Guess the Number</h3>
+                <p>Guess a number between 1 and 10</p>
+                <input type="number" id="guessInput">
+                <button onclick="checkGuess()">Guess</button>
+                <p id="result"></p>
+            </div>
+            
+            <P style="color: blue;"> you are So cute , lovely and beautiful girl 😍 👍</p><br>
+
+  <p> 
+
+    If you were a vegetable, <br> you’d be a ‘cute-cumber.’
+
+<br>
+
+    
+
+<br> <h3 style="text-align:center;">Play the game with us</h3>
+
+     <h4 style="text-align:center;">select only one </h4>
+
+     
+
+
+
+            <div class="game-box">
+                <h3>🤔 Truth or Dare</h3>
+                <button onclick="playTruthDare('truth')">Truth</button>
+                <button onclick="playTruthDare('dare')">Dare</button>
+                <p id="truthDareResult"></p>
+            </div>
+        </div>
+    </div>
+
+<br>
+
+<div class="birthdayCard">
+
+<div class="cardFront">
+
+  <div class="front-text">
+
+  <h3 class="happy">HAPPY</h3>
+
+  <h2 class="bday">BIRTHDAY</h2> 
+
+  <h3 class="toyou"></h3>  
+
+  </div>
+
+  <div class="wrap-deco">
+
+<div class="decorations"></div>
+
+<div class="decorationsTwo"></div>
+
+  </div> 
+
+    <div class="wrap-decoTwo">
+
+<div class="decorations"></div>
+
+<div class="decorationsThree"></div>
+
+  </div>
+
+  <div class="plate">
+
+    <div class="cake"></div>
+
+    <div class="flame"></div>
+
+  </div>
+
+</div>  
+
+  <div class="cardInside">
+
+     <div class="inside-text">
+
+  <h3 class="happy">HAPPY</h3>
+
+  <h2 class="bday">BIRTHDAY</h2> 
+
+  <h3 class="toyou">to you ji !</h3>  
+
+  </div>
+
+    <div class="wishes">
+
+    <p class="para">Dear Friend,</p>
+
+     <p>May your life be as colorful as a rainbow, as joyful as a laugh, and as bright as the stars. 🌟</p>
+
+                    <p>Have a fantastic day! 🎉</p>
+
+    <p class="name">Your Truly Friend</p>
+
+    </div>
+    <br>
+    <br>
+
+<label for="what is your class & section"><input name="what is your goal and 3 wishes you want..." placeholder="what is your goal and 3 wishes you want..."class="input1" ></label>
+
+  </div>
+<br>
+</div><p class="para"><b> this is only for you Birthday girl 💕👑🎂</b> </p>
+
+
+
+<iframe class="BLOG_video_class" allowfullscreen="" youtube-src-id="K2aJTT29ZdU" width="400" height="322" src="https://www.youtube.com/embed/K2aJTT29ZdU"></iframe><p>&nbsp;</p>
+
+
+     
+
+     <label><input type="text" name="what do you like?" id="q1" placeholder="what do you like?"class="input1"  ></label>
+
+      
+<br>
+   <p style="font-family:playfair; color: purple;">   खुदा बुरी नज़र से बचाए आप को,
+
+<br>चाँद सितारों से सजाए आप को,</br>
+
+<br>गम क्या होता है ये आप भूल ही जाओ,</br></br>
+
+<br>खुदा ज़िन्दगी मे इतना हँसाए आपको…</br></br></br>
+
+Wish u a very Happy Bday🎂</p>
+
+</div>
+
+ <br>
+
+
+    <div class="footer">
+        <p>Thank you for celebrating with us! 🎊</p>
+    </div>
+    <div style="width: 100%; height: 50vh; overflow-x: scroll; display: flex; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;">
+  <div style="min-width: 100%; height: 100%; background: linear-gradient(to right, #ffecd2, #fcb69f); display: flex; align-items: center; justify-content: center; scroll-snap-align: start;">
+    <h1 style="font-size: 2rem; text-align: center;">Hey Gorgeous! 🌹<br>You just made my day brighter by being here.
+    <br>. Slide it left ⬅️◀️</h1>
+    
+  </div>
+  <div style="min-width: 100%; height: 50vh; background: linear-gradient(to right, #a1c4fd, #c2e9fb); display: flex; align-items: center; justify-content: center; scroll-snap-align: start;">
+    <h1 style="font-size: 2rem; text-align: center;">Are you a magician? ✨<br>Because every time I look at you, everyone else disappears.</h1>
+  </div>
+  <div style="min-width: 90%; height: 50vh; background: linear-gradient(to right, #ff9a9e, #fad0c4); display: flex; align-items: center; justify-content: center; scroll-snap-align: start;">
+    <h1 style="font-size: 2rem; text-align: center;">I like you. 💖<br>Do you like me too?</h1>
+    <div style="margin-top: 1rem;">
+      <button onclick="alert('You said YES! 💕')" style="background: #ff6b6b; color: white; padding: 10px 20px; margin: 5px; border: none; border-radius: 5px;">Yes</button>
+      <button onclick="alert('Aww, maybe next time. 😅')" style="background: #d94e4e; color: white; padding: 10px 20px; margin: 5px; border: none; border-radius: 5px;">No</button>
+    </div>
+  </div>
+</div>
+
+
+ <p> Are you like this celebration </p>
+
+ <select name="you like"><option>Yes</option>
+
+   <option>No</option>
+   </select>
+
+       <p> pls comment your experience  </p> 
+<label name="Comments you experienced">
+     <input value="how are you so much 🥰" class="input1" name="Comments you experienced" value="Comments you experienced">
+</label>
+
+  <br> 
+  
+      <input type="submit" value="Next" class="a">                    
+      <br><br><br><br><br><br>                       
+<script>
+// Guess the Number Game
+let randomNumber = Math.floor(Math.random() * 10) + 1;
+
+function checkGuess() {
+    let userGuess = parseInt(document.getElementById("guessInput").value);
+    let result = document.getElementById("result");
+
+    if (isNaN(userGuess) || userGuess < 1 || userGuess > 10) {
+        result.innerHTML = "❌ Please enter a number between 1 and 10.";
+        result.style.color = "red";
+    } else if (userGuess === randomNumber) {
+        result.innerHTML = "🎉 Congratulations! You guessed it right!";
+        result.style.color = "green";
+        randomNumber = Math.floor(Math.random() * 10) + 1; // Reset the game
+    } else {
+        result.innerHTML = "😞 Try Again!";
+        result.style.color = "orange";
+    }
+}
+
+// Store Birthday Wish
+function storeWish() {
+    let name = document.getElementById("name").value.trim();
+    let wishMessage = document.getElementById("customMessage").value.trim();
+    let displayMessage = document.getElementById("wishMessage");
+
+    if (name === "" || wishMessage === "") {
+        displayMessage.innerHTML = "⚠ Please enter your name and wish.";
+        displayMessage.style.color = "red";
+        return;
+    }
+
+    displayMessage.innerHTML = `🎉 Thank you, <strong>${name}</strong>! Your wish has been sent!`;
+    displayMessage.style.color = "green";
+
+    // Clear input fields after submission
+    document.getElementById("name").value = "";
+    document.getElementById("customMessage").value = "";
+}
+
+// Truth or Dare Game
+let truths = [
+    "What is your biggest fear?",
+    "Have you ever lied to your best friend?",
+    "What’s the most embarrassing thing you've ever done?",
+    "Who was your first crush?",
+    "What’s a secret you've never told anyone?"
+];
+
+let dares = [
+    "Dance for 1 minute without music!",
+    "Sing a song loudly!",
+    "Act like a monkey for 30 seconds!",
+    "Send a funny selfie to your friend!",
+    "Spin around 10 times and walk in a straight line!"
+];
+
+function playTruthDare(choice) {
+    let result = document.getElementById("truthDareResult");
+
+    if (choice === "truth") {
+        let randomTruth = truths[Math.floor(Math.random() * truths.length)];
+        result.innerHTML = "🧐 Truth: " + randomTruth;
+    } else {
+        let randomDare = dares[Math.floor(Math.random() * dares.length)];
+        result.innerHTML = "😈 Dare: " + randomDare;
+    }
+  
+    result.style.color = "#ff4500";
+}
+
+function createFallingElements() {
+    const symbols = ["❤️", "🌸", "🔵"];
+    
+    function createElement() {
+        let element = document.createElement("div");
+        element.classList.add("falling");
+        element.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+
+        // Random position
+        element.style.left = Math.random() * 100 + "vw";
+        element.style.animationDuration = Math.random() * 3 + 2 + "s"; // 2s - 5s fall speed
+
+        document.body.appendChild(element);
+
+        // Remove element after animation ends
+        setTimeout(() => {
+            element.remove();
+        }, 5000);
+    }
+
+    // Create elements every 300ms for 10 seconds
+    let interval = setInterval(createElement, 300);
+    setTimeout(() => clearInterval(interval), 10000); // Stop after 10 seconds
+}
+
+// Start the effect after 1 second
+setTimeout(createFallingElements, 1000);
+
+function showCake() {
+    // Create cake container
+    let cakeContainer = document.createElement("div");
+    cakeContainer.id = "birthdayCake";
+    document.body.appendChild(cakeContainer);
+
+    // Add cake structure
+    cakeContainer.innerHTML = `
+        <div class="candles">
+            <div class="flame"></div>
+            <div class="flame"></div>
+            <div class="flame"></div>
+        </div>
+        <div class="cake-layer"></div>
+        <div class="cake-layer"></div>
+        <div class="cake-layer"></div>
+        <div class="cake-message">Happy Birthday, <span id="cakeName">🎉 Dear Yashika 🎉</span>!</div>
+    `;
+
+    // Ask for name
+   // let userName = prompt("Enter the birthday person's name:");
+  //  if (userName) {
+        //document.getElementById("cakeName").textContent = userName;
+  //  }
+
+    // Remove (Murder) the cake after 10 seconds
+    setTimeout(() => {
+        cakeContainer.style.transform = "scale(0)";
+        setTimeout(() => cakeContainer.remove(), 1000);
+    }, 5000);
+}
+
+// Show cake 2 seconds after page loads
+setTimeout(showCake, 5000);
+function playMusic() {
+            document.getElementById("bgMusic").play();
+        }
+        
+        document.addEventListener("DOMContentLoaded", function () {
+    // Create an audio element
+    let audio = document.createElement("audio");
+    audio.src = "https://www.bensound.com/bensound-music/bensound-ukulele.mp3"; 
+    // Replace with your own music file URL
+    audio.loop = true;
+    audio.volume = 0.7; // Adjust volume level (0.0 - 1.0)
+    document.body.appendChild(audio);
+
+    // Auto-play when page loads
+    function playMusic() {
+        audio.play().catch(() => {
+            
+        });
+    }
+
+    // Play on user interaction (fix for autoplay restrictions)
+    document.body.addEventListener("click", playMusic, { once: true });
+    document.body.addEventListener("auto", playMusic, { once: true });
+
+    // Try playing music on load (Some browsers block autoplay)
+    setTimeout(playMusic, 20000);
+});
+</script>
+</form>
+</body>
+</html>
